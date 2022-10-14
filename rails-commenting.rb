@@ -7,6 +7,7 @@
 # FILE: app/controller/blog_posts_controller.rb
 
 # ---1)
+# 
 class BlogPostsController < ApplicationController
   def index
     # ---2)
