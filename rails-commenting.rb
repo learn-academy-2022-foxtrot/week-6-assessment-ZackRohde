@@ -7,25 +7,29 @@
 # FILE: app/controller/blog_posts_controller.rb
 
 # ---1)
-# 
+# Application Controller is the Parent Class and the BlogPostController is a Child Class.
 class BlogPostsController < ApplicationController
   def index
     # ---2)
+    # posts is an instance variable, BlogPost is the class name, and the .all is stating we want to see all posts in the database.
     @posts = BlogPost.all
   end
 
   # ---3)
+  # Were defining show which is a controller action. post is the instance variable. BlogPost is the class, and were finding a specific blog by the id.
   def show
     @post = BlogPost.find(params[:id])
   end
 
   # ---4)
+  # Were defining new which is a controller action. post is the instance variable. BlogPost is the class and the .new is giving the instance variable the ability to be viewed?
   def new
     @post = BlogPost.new
   end
 
   def create
     # ---5)
+    # 
     @post = BlogPost.create(blog_post_params)
     if @post.valid?
       redirect_to blog_post_path(@post)
