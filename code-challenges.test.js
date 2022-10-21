@@ -1,5 +1,7 @@
 // ASSESSMENT 6: JavaScript Coding Practical Questions with Jest
 
+// const { objectExpression } = require("@babel/types")
+
 // Please read all questions thoroughly
 // Pseudo coding is REQUIRED
 // If you get stuck, please leave comments to help us understand your thought process
@@ -32,6 +34,16 @@ const people = [
 
 // b) Create the function that makes the test pass.
 
+// PSUEDO CODE:
+// Create a function that takes in an array
+// Figure out how to convert an object into an array
+// I know I'm missing a lot here, I'm just not sure, this is a hard question....
+// I know well use string interpolation to access the name and occupation and use it for the return
+
+const capName = (array) => {
+
+}
+console.log((capName(people)
 // --------------------2) Create a function that takes in a mixed data array and returns an array of only the REMAINDERS of the numbers when divided by 3.
 
 // a) Create a test with an expect statement using the variables provided.
