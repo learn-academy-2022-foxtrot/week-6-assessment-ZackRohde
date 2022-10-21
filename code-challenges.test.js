@@ -14,6 +14,15 @@
 
 // a) Create a test with an expect statement using the variable provided.
 
+describe("capName", () => {
+  it("takes in an array of objects and returns an array with a sentence about each person with their name capitalized.", () => {
+    expect(capName(people)).toEqual(["Ford Prefect is a hitchhiker.", "Zaphod Beeblebrox is president of the galaxy.", "Arthur Dent is a radio employee."])
+  })
+})
+
+// Good Fail!
+// ReferenceError: capName is not defined
+
 const people = [
   { name: "ford prefect", occupation: "a hitchhiker" },
   { name: "zaphod beeblebrox", occupation: "president of the galaxy" },
@@ -27,6 +36,16 @@ const people = [
 
 // a) Create a test with an expect statement using the variables provided.
 
+describe("remDivBy3", () => {
+  it("returns an array of only the REMAINDERS of the numbers when divided by 3.", () => {
+    expect(remDivBy3(hodgepodge1)).toEqual([2, 0, -1, 0])
+    expect(remDivBy3(hodgepodge2)).toEqual([2, 1, -1])
+  })
+})
+
+// Good Fail!
+//     ReferenceError: remDivBy3 is not defined
+
 const hodgepodge1 = [23, "Heyyyy!", 45, -10, 0, "Yo", false]
 // Expected output: [ 2, 0, -1, 0 ]
 const hodgepodge2 = [5, "Hola", 43, -34, "greetings", true]
@@ -37,6 +56,16 @@ const hodgepodge2 = [5, "Hola", 43, -34, "greetings", true]
 // --------------------3) Create a function that takes in an array of numbers and returns the sum of all the numbers cubed.
 
 // a) Create a test with an expect statement using the variables provided.
+
+describe("sumOfNumCubed", () => {
+  it("takes in an array of numbers and returns the sum of all the numbers cubed.", () => {
+    expect(sumOfNumCubed(cubeAndSum1)).toEqual(99)
+    expect(sumOfNumCubed(cubeAndSum2)).toEqual(1125)
+  })
+})
+
+// Good Fail!
+// ReferenceError: sumOfNumCubed is not defined
 
 const cubeAndSum1 = [2, 3, 4]
 // Expected output: 99
