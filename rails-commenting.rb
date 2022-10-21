@@ -29,7 +29,7 @@ class BlogPostsController < ApplicationController
 
   def create
     # ---5)
-    # 
+    # We saying the instance variable = our class and were going to create a post using the blog posts params. Then we have a conditional that reads like " is this post valid, if it is than redirect it to the path of creating."
     @post = BlogPost.create(blog_post_params)
     if @post.valid?
       redirect_to blog_post_path(@post)
@@ -38,12 +38,14 @@ class BlogPostsController < ApplicationController
 
   def edit
     # ---6)
+    # Were finding a specific post using the id or primary key and were able to edit the post
     @post = BlogPost.find(params[:id])
   end
 
   def update
     @post = BlogPost.find(params[:id])
     # ---7)
+    # Similar to the create we doing the same thing, but this one were updating the post. 
     @post.update(blog_post_params)
     if @post.valid?
       redirect_to blog_post_path(@post)
@@ -54,14 +56,17 @@ class BlogPostsController < ApplicationController
     @post = BlogPost.find(params[:id])
     if @post.destroy
       # ---8)
+      # Were redirecting the blog post path once it's been defined and we know what were doing. In this case we are destorying the blog post at a certain id. 
       redirect_to blog_posts_path
     end
   end
 
   # ---9)
+  # This creates a layer of protection for everything below the words "private", meaning anything below cannot be called upon. 
   private
   def blog_post_params
     # ---10)
+    # I believe we are stating that if something wants to be passed we must require the params to have a blog post attached long with the title an content of that blog post.
     params.require(:blog_post).permit(:title, :content)
   end
 end
