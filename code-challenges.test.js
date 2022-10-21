@@ -14,11 +14,11 @@
 
 // a) Create a test with an expect statement using the variable provided.
 
-describe("capName", () => {
-  it("takes in an array of objects and returns an array with a sentence about each person with their name capitalized.", () => {
-    expect(capName(people)).toEqual(["Ford Prefect is a hitchhiker.", "Zaphod Beeblebrox is president of the galaxy.", "Arthur Dent is a radio employee."])
-  })
-})
+// describe("capName", () => {
+//   it("takes in an array of objects and returns an array with a sentence about each person with their name capitalized.", () => {
+//     expect(capName(people)).toEqual(["Ford Prefect is a hitchhiker.", "Zaphod Beeblebrox is president of the galaxy.", "Arthur Dent is a radio employee."])
+//   })
+// })
 
 // Good Fail!
 // ReferenceError: capName is not defined
@@ -36,12 +36,12 @@ const people = [
 
 // a) Create a test with an expect statement using the variables provided.
 
-describe("remDivBy3", () => {
-  it("returns an array of only the REMAINDERS of the numbers when divided by 3.", () => {
-    expect(remDivBy3(hodgepodge1)).toEqual([2, 0, -1, 0])
-    expect(remDivBy3(hodgepodge2)).toEqual([2, 1, -1])
-  })
-})
+// describe("remDivBy3", () => {
+//   it("returns an array of only the REMAINDERS of the numbers when divided by 3.", () => {
+//     expect(remDivBy3(hodgepodge1)).toEqual([2, 0, -1, 0])
+//     expect(remDivBy3(hodgepodge2)).toEqual([2, 1, -1])
+//   })
+// })
 
 // Good Fail!
 //     ReferenceError: remDivBy3 is not defined
@@ -57,12 +57,12 @@ const hodgepodge2 = [5, "Hola", 43, -34, "greetings", true]
 
 // a) Create a test with an expect statement using the variables provided.
 
-describe("sumOfNumCubed", () => {
-  it("takes in an array of numbers and returns the sum of all the numbers cubed.", () => {
-    expect(sumOfNumCubed(cubeAndSum1)).toEqual(99)
-    expect(sumOfNumCubed(cubeAndSum2)).toEqual(1125)
-  })
-})
+// describe("sumOfNumCubed", () => {
+//   it("takes in an array of numbers and returns the sum of all the numbers cubed.", () => {
+//     expect(sumOfNumCubed(cubeAndSum1)).toEqual(99)
+//     expect(sumOfNumCubed(cubeAndSum2)).toEqual(1125)
+//   })
+// })
 
 // Good Fail!
 // ReferenceError: sumOfNumCubed is not defined
@@ -73,3 +73,15 @@ const cubeAndSum2 = [0, 5, 10]
 // Expected output: 1125
 
 // b) Create the function that makes the test pass.
+
+// PSUEDO CODE:
+// Create a function and pass in an array
+// Cube each number 
+// I believe using .reduce() which takes in an array of numbers and returns a single value, will be used for this
+// Then we will take the value and the next value and add them together, remeber the reduce method will only output a single value. 
+// Console log both function names
+
+const sumOfNumCubed = (array) => {
+  return array.map((value) => value ** 3).reduce((value, nextValue) => value + nextValue)
+}
+console.log(sumOfNumCubed(cubeAndSum1))
