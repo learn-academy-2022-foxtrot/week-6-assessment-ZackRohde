@@ -53,6 +53,18 @@ const hodgepodge2 = [5, "Hola", 43, -34, "greetings", true]
 
 // b) Create the function that makes the test pass.
 
+//PSUEDO CODE:
+// Create a function and pass in an array
+// I think we should filter out the strings and boolean values to only leave us with the integers. 
+// Then we iterate over the array using the .map which returns the same values inputted, but % by 3
+// Console log
+
+const remDivBy3 = (array) => {
+  return array.filter((value) => typeof value === "number").map((value) => value % 3)
+}
+console.log(remDivBy3(hodgepodge1))
+console.log(remDivBy3(hodgepodge2))
+
 // --------------------3) Create a function that takes in an array of numbers and returns the sum of all the numbers cubed.
 
 // a) Create a test with an expect statement using the variables provided.
@@ -85,3 +97,4 @@ const sumOfNumCubed = (array) => {
   return array.map((value) => value ** 3).reduce((value, nextValue) => value + nextValue)
 }
 console.log(sumOfNumCubed(cubeAndSum1))
+console.log(sumOfNumCubed(cubeAndSum2))
