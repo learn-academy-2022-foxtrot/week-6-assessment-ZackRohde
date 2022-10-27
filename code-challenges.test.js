@@ -36,12 +36,16 @@ const people = [
 
 // PSUEDO CODE:
 // Create a function that takes in an array
-// Figure out how to convert an object into an array
-// I know I'm missing a lot here, I'm just not sure, this is a hard question....
-// I know well use string interpolation to access the name and occupation and use it for the return
+// Iterate over the different objects by using .map((object) because were iterating over the objects
+// Use string interpolation for the name in the object and occupation
+// Using .split("") we are individually seperating the elements
+// We must map over again to slice the (0,1) which is the first elements index and the second elements first index (I believe)
+// Slice the first letter of each word for the names by using object.name because we can use dot notation like you said to access the key value pairs
+// Capitalize it using .toUpperCase() method and join them back
 
 const capName = (array) => {
-
+  return array.map((object) => `${object.name.split("").map((firstName) => firstName.slice(0, 1).toUpperCase() + firstName.slice(1)).join("")} is ${object.occupation}.`
+  )
 }
 console.log((capName(people)
 // --------------------2) Create a function that takes in a mixed data array and returns an array of only the REMAINDERS of the numbers when divided by 3.
